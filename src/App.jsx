@@ -1,4 +1,4 @@
-import React from "react";
+import Card from "./components/Card";
 import "./index.css";
 
 //Rus
@@ -65,5 +65,9 @@ const cardData = [
 ];
 
 export default function CardContainer() {
-  return <div className="card-container"></div>;
+  return <div className="card-container">
+    {
+      cardData.map(item => <Card props = {item}/>)
+    }
+  </div>;
 }
