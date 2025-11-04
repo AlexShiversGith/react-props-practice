@@ -67,14 +67,14 @@ const cardData = [
 export default function CardContainer() {
   return <div className="card-container">
     {
-      cardData.map((item, id) => <Card 
+      cardData.map((item, id) => !item.archived ? (<Card 
         key = {id}
         title = {item.title}
         description = {item.description}
         date = {item.date}
         imageUrl = {item.imageUrl}
         tags = {item.tags}
-      />)
+      />) : null)
     }
   </div>;
 }
