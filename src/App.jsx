@@ -67,7 +67,14 @@ const cardData = [
 export default function CardContainer() {
   return <div className="card-container">
     {
-      cardData.map(item => <Card props = {item}/>)
+      cardData.map((item, id) => <Card 
+        key = {id}
+        title = {item.title}
+        description = {item.description}
+        date = {item.date}
+        imageUrl = {item.imageUrl}
+        tags = {item.tags}
+      />)
     }
   </div>;
 }

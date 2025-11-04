@@ -1,12 +1,12 @@
 import CardTag from "./CardTag"
 
 function Card(props) {
-  const title = props.props.title
-  const description = props.props.description
-  const date = props.props.date
-  const imageUrl = props.props.imageUrl
-  const tags = props.props.tags
-  const archived = props.props.archived
+  const title = props.title
+  const description = props.description
+  const date = props.date
+  const imageUrl = props.imageUrl
+  const tags = props.tags
+  const archived = props.archived
 
   return (
     <div className="card">
@@ -17,7 +17,10 @@ function Card(props) {
         <p className="card-date">{date}</p>
         <div className="card-tags">
           {
-            tags.map(tag => <CardTag tag={tag} />)
+            tags.map((tag, id) => <CardTag
+              key = {id}
+              tag = {tag} 
+            />)
           }
         </div>
       </div>
